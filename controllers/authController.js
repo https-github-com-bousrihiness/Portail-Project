@@ -1,8 +1,9 @@
 const userModel = require('../models/userModel');
+
 var bcrypt = require('bcrypt')
 var randomstring = require("randomstring");
 
-
+// add user
 const signUp = async (req, res) => {
 
     const passwordRandom = randomstring.generate(7)
