@@ -1,7 +1,9 @@
 const router = require ('express').Router();
-
+const multer = require("multer");
+const upload = multer();
 const authController = require ('../controllers/authController')
 const userController = require('../controllers/userController');
+const uploadController = require('../controllers/uploadController');
 
 // s'inscrire
 router.post("/register", authController.signUp);
@@ -16,5 +18,9 @@ router.get('/', userController.getAllUsers);
 router.get('/:id', userController.userInfo);
 router.put('/:id', userController.updateUser);
 router.delete('/:id', userController.deleteUser);
+
+
+// upload
+router.post("/upload", upload.single("file"), uploadController.uploadProfil);
 
 module.exports = router;
