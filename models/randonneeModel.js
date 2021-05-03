@@ -33,12 +33,17 @@ const randonneeSchema= new Schema(
         },
         id_organisateur: {
             type: mongoose.Schema.Types.ObjectId,
-             ref: 'user'
+             ref: 'user',
+          required:true
         },
         commentaires: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Comment'
           }]
+
+         
+        }
+
     }
 )
 module.exports = mongoose.model('randonnee', randonneeSchema);

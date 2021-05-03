@@ -26,15 +26,15 @@ const userSchema = new mongoose.Schema(
             minlength:6         
         },
         picture: {
-            type:String,
-            default:"./uploads/profil/random-user.png"
-
-        },
+            type: String,
+            default: "./uploads/profil/random-user.png"
+          },
         role: {
             type: String,
             enum: ['user', 'guide', 'organisateur', 'admin'],
             default: 'user',
           },
+       
     }
 )
 // fucntion crypt password before save into display

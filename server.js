@@ -12,8 +12,12 @@ const app = express();
 
 const userRoutes = require('./routes/userRoutes');
 const randonneeRoutes = require('./routes/randonneeRoutes');
+
 const commentRoutes = require('./routes/commentRoutes');
 
+
+=======
+const bookingRoutes = require ('./routes/bookingRoutes');
 
 
 
@@ -21,6 +25,7 @@ app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }))
 // app.use(cors());
 app.use(cookieParser());
+
 
 // jwt
 app.get('*', checkUser);
@@ -30,9 +35,15 @@ app.get('/jwtid', requireAuth, (req,res)=>{
 
 
 //Routes 
+
 app.use('/api/randonnee',randonneeRoutes);
 app.use('/api/user',userRoutes);
 app.use('/api/comment',commentRoutes);
+
+=======
+app.use('/api/user', userRoutes)
+app.use('/api/randonnee',randonneeRoutes);
+app.use('/api/booking', bookingRoutes)
 
 
 
