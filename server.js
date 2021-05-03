@@ -12,6 +12,7 @@ const app = express();
 
 const userRoutes = require('./routes/userRoutes');
 const randonneeRoutes = require('./routes/randonneeRoutes');
+const commentRoutes = require('./routes/commentRoutes');
 
 
 
@@ -30,7 +31,9 @@ app.get('/jwtid', requireAuth, (req,res)=>{
 
 //Routes 
 app.use('/api/randonnee',randonneeRoutes);
-app.use('/api/user',userRoutes)
+app.use('/api/user',userRoutes);
+app.use('/api/comment',commentRoutes);
+
 
 
 

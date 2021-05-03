@@ -10,6 +10,8 @@
   "author": "Bacem,Ines",
   "license": "ISC",
   "dependencies": {
+    "@azure/ai-text-analytics": "^5.0.1",
+    "aws-sdk": "^2.895.0",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
