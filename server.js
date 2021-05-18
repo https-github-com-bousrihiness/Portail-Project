@@ -14,9 +14,6 @@ const userRoutes = require('./routes/userRoutes');
 const randonneeRoutes = require('./routes/randonneeRoutes');
 
 const commentRoutes = require('./routes/commentRoutes');
-
-
-=======
 const bookingRoutes = require ('./routes/bookingRoutes');
 
 
@@ -39,14 +36,7 @@ app.get('/jwtid', requireAuth, (req,res)=>{
 app.use('/api/randonnee',randonneeRoutes);
 app.use('/api/user',userRoutes);
 app.use('/api/comment',commentRoutes);
-
-=======
-app.use('/api/user', userRoutes)
-app.use('/api/randonnee',randonneeRoutes);
-app.use('/api/booking', bookingRoutes)
-
-
-
+app.use('/api/booking', bookingRoutes);
 
 //Server
 app.listen(process.env.PORT, () => {

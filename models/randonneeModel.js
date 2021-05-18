@@ -41,9 +41,6 @@ const randonneeSchema= new Schema(
             ref: 'Comment'
           }]
 
-         
-        }
+    })
 
-    }
-)
 module.exports = mongoose.model('randonnee', randonneeSchema);

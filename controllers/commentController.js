@@ -7,13 +7,13 @@ const client = new TextAnalyticsClient("https://bacem.cognitiveservices.azure.co
 
 // Add comment 
 exports.add_comment=(req,res)=>{
-    console.log(req.body);
+    console.log("*****",req.body.text);
 
     //getting the comment typed by the user
     const documents = [
-        req.body.comment,
+        req.body.text,
       ];
-      
+     
       //Calling the anlyzeSentiment method of our TextAnalyticsClient
       const results = client.analyzeSentiment(documents).then(
           results=>{
@@ -28,7 +28,7 @@ exports.add_comment=(req,res)=>{
                 
             // Comment creation
             const comment = new commentModel({
-                text : req.body.comment,
+                text : req.body.text,
                 date : req.body.date,
                 randonnee : req.params.idrandonnee,
                 attitude : result.sentiment.toString(),
